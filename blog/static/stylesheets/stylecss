@@ -1,0 +1,13 @@
+.card {
+  margin: 10px;
+}
+
+.read-more-link {
+  color: black;
+}
+
+.read-more-link:hover {
+  color: grey;
+}
+
+/*# sourceMappingURL=stylecss.map */

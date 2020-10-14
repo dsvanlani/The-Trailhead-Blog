@@ -1,0 +1,22 @@
+{% extends 'articles/layout2.html' %}
+{% block body %}
+
+<div class="container d-flex justify-content-center">
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {% if message %}
+        <p style="color: green;">{{ message }}</p>
+        {% endif %}
+        <h3><u>Add Article</u></h3>
+        <table>
+        {% for field in form %}
+        <tr>
+            <th>{{ field.label_tag }}</th>
+            <td>{{ field }}</td>
+        </tr>
+        {% endfor %}
+        </table>
+        <input type="submit">
+    </form>
+</div>
+{% endblock %}

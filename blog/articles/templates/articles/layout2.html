@@ -1,0 +1,81 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- My CSS -->
+    <link rel="stylesheet" href="{% static 'stylesheets/style.css' %}">
+    <title>{% block title %}{% endblock %}</title>
+    {% block script %}{% endblock %}
+</head>
+<body>
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-sm navbar-light bg-light">
+  <a class="navbar-brand" href="{% url 'home' %}">The Trailhead Blog</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item ">
+        <button class="btn btn-link nav-link" data-toggle="modal" data-target="#subscribe-form">Subscribe</button>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+
+<!-- SUBSCRIBE FORM MODAL -->
+<div class="modal fade" id="subscribe-form" tabindex="-1" role="dialog" aria-labelledby="Subscriber Form" aria-hidden="true">
+    <div class="modal-dialog" role="form">
+        <div class="modal-content">
+            <div class="container-fluid">
+                <div class="modal-header">
+                    <h5 class="modal-title">Subscribe</h5>
+                </div>
+                <div class="modal-body">
+                    <div id="subscriber-modal-form">
+                        <p>We'll send you an email to update you on new articles.
+                        Don't worry - we won't spam your inbox and you can unsubscribe
+                        anytime you want.</p>
+                        <div class="form-group">
+                            <label for="#subscriber-name">Name:</label>
+                            <input required type="text" class="form-control" id="subscriber-name">
+                            <label for="subscriber-email">Email:</label>
+                            <input required type="email" class="form-control" id="subscriber-email"><br>
+                            <button class="btn btn-primary form-control" id="subscribe-button">Subscribe</button>
+                        </div>
+                        <p style="color: red;"><span id="subscriber-error-message"></span></p>
+                    </div>
+                    <div id="subscriber-modal-success-view" style="display: none;">
+                    <p>You're Subscribed!</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    {% block body %}
+    {% endblock %}
+
+    <!-- My Javascript -->
+    <script src="{% static 'javascript/layout.js' %}"></script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</body>
+</html>
