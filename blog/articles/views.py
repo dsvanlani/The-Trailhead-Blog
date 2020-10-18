@@ -61,9 +61,13 @@ def article_page(request, url):
     content = f.read()
     f.close()
 
+    # Get all the comments
+    comments = Comment.objects.filter(article=article).all()
+
     context = {
         "article": article,
-        "content": content
+        "content": content,
+        "comments": comments
     }
     return render(request, 'articles/article-page.html', context)
 

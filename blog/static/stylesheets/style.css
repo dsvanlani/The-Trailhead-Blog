@@ -10,4 +10,12 @@
   color: grey;
 }
 
+table {
+  padding: 4px;
+}
+
+#new-comment-box {
+  display: none;
+}
+
 /*# sourceMappingURL=style.css.map */

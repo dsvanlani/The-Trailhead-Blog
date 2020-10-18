@@ -20,6 +20,7 @@ class Comment(models.Model):
     author_email = models.CharField(max_length=64, null=False)
     body = models.TextField()
     datetime = models.DateTimeField(auto_now_add=True)
+    article = models.ForeignKey(Article, on_delete=models.CASCADE, null=True)
 
 class Subscriber(models.Model):
     name = models.CharField(max_length=64)
