@@ -25,5 +25,6 @@ urlpatterns = [
     path('articles/<str:url>', views.article_page),
     path('subscriptions/add_subscriber', views.add_subscriber),
     path('subscriptions/preferences/<str:subscriber_id>', views.subscriber_preferences),
-    path('subscriptions/save-preferences', views.subscriber_preferences_fetch)
+    path('subscriptions/save-preferences', views.subscriber_preferences_fetch),
+    path('post-comment', views.postComment)
     ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

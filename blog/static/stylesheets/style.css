@@ -17,5 +17,16 @@ table {
 #new-comment-box {
   display: none;
 }
+#new-comment-box input {
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+
+#article-content-row {
+  background-color: #e1e3cc;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-top: 10px;
+}
 
 /*# sourceMappingURL=style.css.map */

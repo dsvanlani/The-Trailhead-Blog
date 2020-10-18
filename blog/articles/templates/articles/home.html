@@ -8,7 +8,7 @@
         <div class="col-sm-3"></div>
         <div class="col-sm-6">
            <div class="card rounded" id="main-article">
-               <div class="card-header">Featured Article</div>
+               <h3 class="card-header">Featured Article</h3>
                <a href="{% url 'articles' %}{{ main_article.url }}"><img src="{{ main_article.image.url }}" class="card-img-top" alt="..."></a>
                <div class="card-body">
                   <h5 class="card-title">{{ main_article.title }}</h5>

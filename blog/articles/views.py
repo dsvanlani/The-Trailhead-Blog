@@ -62,7 +62,7 @@ def article_page(request, url):
     f.close()
 
     # Get all the comments
-    comments = Comment.objects.filter(article=article).all()
+    comments = Comment.objects.filter(article=article).order_by('-datetime').all()
 
     context = {
         "article": article,
@@ -153,3 +153,34 @@ def subscriber_preferences_fetch(request):
             return JsonResponse(response)
 
 
+@csrf_exempt
+def postComment(request):
+    if request.method != "POST":
+        return HttpResponse("<h2>403 Error: method not allowed.</h2>")
+    else:
+        try:
+            data = json.loads(request.body)
+
+            author = data['commenterName']
+            email = data['commenterEmail']
+            body = data['commentBody']
+            article = Article.objects.get(url=data['articleURL'])
+
+            comment = Comment(
+                author=author,
+                author_email=email,
+                body=body,
+                article=article
+            )
+
+            comment.save()
+            message = 'success'
+
+            return JsonResponse({"message": message})
+
+        except Exception as e:
+            message = 'error'
+            error_message = e.__str__()
+            return JsonResponse({"message": message,
+                                 "error message": error_message
+                                 })
