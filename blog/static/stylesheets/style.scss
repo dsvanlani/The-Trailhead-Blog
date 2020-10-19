@@ -1,9 +1,13 @@
+$dark-color: #26495c;
+$light-color: #e5e5dc;
+$second-light-color: #f5f5eb;
+
 .card {
     margin: 10px;
     }
 
 .read-more-link {
-    color: black;
+    color: dark-color;
     }
 .read-more-link:hover {
     color: grey;
@@ -22,9 +26,64 @@ table {
         }
     }
 
-#article-content-row {
-    background-color: #e1e3cc;
-    margin-top: 20px;
-    margin-bottom: 20px;
+#header-title {
+    font-family: "Times New Roman", Times, serif;
+    color: white;
+    }
+
+header {
     padding-top: 10px;
+    padding-bottom: 10px;
+
+    a {
+        color: white;
+        }
+    a:hover {
+        color: white;
+        }
+    }
+
+
+
+#header-container {
+    background-color: $dark-color;
+
+    button,a {
+        color: $light-color;
+        }
+
+    input {
+        background-color: $light-color;
+        }
+    }
+
+#main-container {
+    background-color: $light-color;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    }
+
+#article-column {
+    background-color: white;
+    border-color: $dark-color;
+    border-width: 1px;
+    border-style: solid;
+    }
+
+#comment-section-container {
+    padding-top: 10px;
+
+    background-color: $second-light-color
+    }
+
+@media (max-width: 849px) {
+    .hide-on-mobile {
+        display: none;
+        }
+    }
+
+@media (min-width: 849px) {
+    .show-on-mobile {
+        display: none;
+        }
     }

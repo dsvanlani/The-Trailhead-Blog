@@ -14,9 +14,13 @@ def home(request):
     recent_articles = Article.objects.all().order_by('-date')[1:4]
     main_article = Article.objects.order_by('-date').first()
 
+    articles = Article.objects.order_by('-date').all()
+
+
     context = {
         "recent_articles": recent_articles,
         "main_article": main_article,
+        "articles": articles
     }
     return render(request, 'articles/home.html', context)
 

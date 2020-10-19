@@ -1,16 +1,16 @@
-{% extends 'articles/layout2.html' %}
+{% extends 'articles/layout.html' %}
 {% load static %}
 {% block script %}
 <script src="{% static 'javascript/article-page.js' %}"></script>
 {% endblock %}
 {% block body %}
 <p style="display: none;" id="article-url">{{ article.url }}</p>
-<div class="container-fluid full-width">
+<div class="container-fluid full-width" id="main-container">
     <div class="row" id="article-content-row">
         <div class="col-sm-2">
         </div>
         <!-- Main Article Column -->
-        <div class="col">
+        <div class="col" id="article-column">
             <h2>{{ article.title }}</h2>
             <p class="text-muted">by {{ article.author }}, {{ article.date.date }}</p>
             {{ content | safe }}
@@ -20,7 +20,8 @@
         <div class="col-sm-2">
         </div>
     </div>
-
+</div>
+<div class="container-fluid max-width" id="comment-section-container">
     <div class="row">
         <div class="col-sm-2"></div>
         <div class="col">
