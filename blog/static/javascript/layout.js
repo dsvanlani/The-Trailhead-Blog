@@ -22,7 +22,9 @@ function subscribeFetch() {
   }
   })
 }
+
 document.addEventListener("DOMContentLoaded", () => {
     // Configure Subscriber button
     document.querySelector("#subscribe-button").onclick = subscribeFetch
+
 })

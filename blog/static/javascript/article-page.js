@@ -14,6 +14,7 @@ function hideNewComment() {
 }
 
 function postComment() {
+  
   commenterName = document.querySelector('#commenter-name').value
   commenterEmail = document.querySelector('#commenter-email').value
   commentBody = document.querySelector('#comment-body').value

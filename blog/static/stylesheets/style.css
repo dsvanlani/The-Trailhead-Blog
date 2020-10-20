@@ -23,7 +23,7 @@ table {
 }
 
 #header-title {
-  font-family: "Times New Roman", Times, serif;
+  font-family: "Tahoma", Geneva, sans-serif;
   color: white;
 }
 
@@ -36,6 +36,9 @@ header a {
 }
 header a:hover {
   color: white;
+}
+header .dropleft a {
+  color: #26495c;
 }
 
 #header-container {
@@ -66,12 +69,12 @@ header a:hover {
   background-color: #f5f5eb;
 }
 
-@media (max-width: 849px) {
+@media (max-width: 767px) {
   .hide-on-mobile {
     display: none;
   }
 }
-@media (min-width: 849px) {
+@media (min-width: 767px) {
   .show-on-mobile {
     display: none;
   }

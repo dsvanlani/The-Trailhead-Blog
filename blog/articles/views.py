@@ -2,6 +2,7 @@ from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse, HttpResponse
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
+from django.core.paginator import Paginator
 from secrets import token_urlsafe
 import json
 from .forms import *
@@ -10,17 +11,10 @@ from .forms import *
 # Create your views here.
 
 def home(request):
-    # --- Get the Articles for the front-page ---
-    recent_articles = Article.objects.all().order_by('-date')[1:4]
-    main_article = Article.objects.order_by('-date').first()
 
     articles = Article.objects.order_by('-date').all()
-
-
     context = {
-        "recent_articles": recent_articles,
-        "main_article": main_article,
-        "articles": articles
+        "articles": articles,
     }
     return render(request, 'articles/home.html', context)
 

@@ -3,20 +3,22 @@
 {% block title %}The Trailhead Blog{% endblock %}
 {% block body %}
 {% load static %}
+
 {% for article in articles %}
+<!-- Article Cards -->
 <div class="container-fluid full-width d-flex justify-content-center" id="main-container">
     <div class="row no-gutters">
         <div class="col-md-3"></div>
         <div class="col-md-6">
-           <div class="card rounded" id="main-article">
-               <a href="{% url 'articles' %}{{ article.url }}"><img src="{{ article.image.url }}" class="card-img-top"></a>
-               <div class="card-body">
-                  <h5 class="card-title">{{ article.title }}</h5>
-                  <p class="card-text">{{ article.description }}</p>
-                  <p class="card-text text-right"><small><b><a class="read-more-link" href="{% url 'articles' %}{{ article.url }}">Read more...</a></b></small></p>
-                  <p class="card-text"><small class="text-muted">{{ article.date.date }}</small>
-              </div>
-            </div>
+               <div class="card rounded" id="main-article">
+                   <a href="{% url 'articles' %}{{ article.url }}"><img src="{{ article.image.url }}" class="card-img-top"></a>
+                   <div class="card-body">
+                      <h5 class="card-title">{{ article.title }}</h5>
+                      <p class="card-text">{{ article.description }}</p>
+                      <a class="read-more-link card-link" href="{% url 'articles' %}{{ article.url }}">Read more...</a>
+                      <p class="card-text"><small class="text-muted">{{ article.date.date }}</small>
+                  </div>
+                </div>
         </div>
         <div class="col-md-3"></div>
     </div>
